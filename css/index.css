@@ -1,0 +1,132 @@
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: rgb(245, 229, 209);
+    min-height: 100px
+}
+
+  .container {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .search {
+position : relative;
+height: 2em;
+width : 50%;
+left : 15em;
+}
+
+.arrow {
+  height : 30px;
+  width: 30px;
+  position:relative;
+  top: -0.1em;
+  left : 15em;
+}
+
+button{
+  background: #FFF;
+  border: #FFF;
+  color: black;
+  cursor: pointer;
+  border-radius: 1px;
+  text-transform: uppercase;
+  text-align: justify;
+  font-family: sans-serif;
+  padding: 5px;
+  outline: none;
+  margin-top: 2px;
+}
+
+#Connexionbutton {
+  position:relative;
+  left:23em;
+}
+
+#Inscriptionbutton {
+  position:relative;
+  left:23em;
+}
+
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 102px;
+}
+
+.backphoto{
+  height: 100%;
+  width: 100%;
+  /* position: fixed;
+   */
+}
+
+h1{
+  color : white;
+  position:relative;
+  left: 3em;
+  top: 3em;
+}
+
+.p1{
+ color: white;
+ position: relative;
+ left: 3em;
+ top:3em;
+}
+
+
+
+/* .tags {
+  display:none;
+  
+  display:block
+} */
+
+#displaybar {
+  display:none;
+}
+
+
+  
+
+  /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+  .row.content {height: 450px}
+  
+  /* Set gray background color and 100% height */
+  .sidenav {
+    padding-top: 20px;
+    background-color: #ffffff;
+    height: 100%;
+  }
+
+  
+  /* Set black background color, white text and some padding */
+  footer {
+    background-color: rgb(87, 87, 87);
+    color: white;
+    padding: 15px;
+  }
+  
+  /* On small screens, set height to 'auto' for sidenav and grid */
+  @media screen and (max-width: 767px) {
+    .sidenav {
+      height: auto;
+      padding: 15px;
+    }
+    .row.content {height:auto;} 
+  }
+
+  /* .content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;} */
