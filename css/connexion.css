@@ -1,0 +1,76 @@
+.backphoto{
+    background-image: url('../image/logopage2.png');
+    background-repeat: no-repeat;
+    width: 800px;
+    height: 200px;
+    /* position: relative;
+    left: 16em;
+    top: 2em; */
+    
+}
+html, body{
+    font-family: PT Sans;
+    background-color: white;
+}
+
+#search{
+    width: 20%;
+    margin-left: 20%;
+    margin-bottom: -10%;
+    padding-top: 0.5%;
+    margin-left: 40%;
+}
+#button{
+    margin-top: 8.1%;
+    margin-left: 61%;
+}
+#navbar{
+    border-radius: 0%;
+    background-color: black;
+    top: 0%;
+    width: 100%;
+}
+
+#text{
+    margin-top: 5%;
+    margin-left: 45%;
+    color :rgb(87, 87, 87);
+}
+#zoneText{
+    margin-top: 1%;
+    margin-left: 45%;
+}
+input{
+    border-radius: 5px;
+}
+button{
+    margin-left: 47%;
+}
+.btn:hover{
+    background-color: red;
+    color: #fff;
+}
+.btn::before{
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    height: 100%;
+    top: 0;
+    left: 10;
+    width: 0%;
+    z-index: -1;
+    transition: all 0.3s;
+}
+#footer{
+    background-color: #9D0D0D;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+}
+#footer2{
+    background-color: black;
+    color: white;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+}

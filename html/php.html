@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<title>CoverFlow</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/Accueil.css">
+<link rel="stylesheet" href="../css/html.css">
+
+
+<body class="w3-theme-l5">
+
+
+<!-- Navbar -->
+<nav id="navbar" class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="Accueil.html">Coverflow</a>
+    </div>
+    <div id="search" class="form-group">
+     <input type="text" name="search" placeholder="Search.." enter="getValue();">
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="Accueil.html">Accueil</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="creation.html"><span class="glyphicon glyphicon-user"></span> S'enregistrer </a></li>
+      <li><a id="connecter" onclick="document.getElementById('id01').style.display='block'" > <span class="glyphicon glyphicon-log-in"></span> Se connecter</a></li>
+    </ul>
+
+    <!--afficher la fenetre de connexion en pop'up-->
+    <div id="id01" class="w3-modal">
+      <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+        <form class="w3-container" action="/action_page.php">
+          <div class="w3-section">
+            <h1 id="boutonconnect">Connexion</h1>
+            <input id="pseudo" class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required >
+            <input id="motDePasse" class="w3-input w3-border" type="text" placeholder="Enter Password" name="psw" required>
+            <button class="w3-button w3-light-green w3-section w3-padding" type="submit">Login</button>
+            <input class="w3-check w3-margin-top" type="checkbox"> Remember me
+          </div>
+        </form>
+        <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+          <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+          <span class="w3-right w3-padding w3-hide-small"><a href="../html/MdpOublie.html">Forgot password ?</a></span>
+        </div>    
+      </div>
+    </div>
+    <!--Fin du pop'up-->
+    
+</nav>
+
+<!-- Navbar sur petit ecrans -->
+<div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
+</div>
+
+<!-- Page Container -->
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
+  <div class="w3-row">
+
+    <!-- menu gauche
+    <div class="w3-col m3">
+       -->
+      <!-- Accordion
+      <div class="w3-card w3-round">
+        <div class="w3-white">
+          <a onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-block w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i>Post +</a>
+           <div id="id02" class="w3-modal">
+              <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+                <form class="w3-container" action="/action_page.php">
+                  <div class="w3-section">
+                    <label><b>Post ton probleme !</b></label>
+                    <textarea class="w3-input w3-border w3-margin-bottom" type="" placeholder="Tape ton post"required></textarea>
+                    <button onclick="sendPost" class="w3-button  w3-light-green w3-section w3-padding" type="submit">Post</button>
+                  </div>
+                </form>
+                <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+                  <button onclick="document.getElementById('id02').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+                </div>
+              </div>
+            </div>
+          <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i>#Tags</button>
+          <div id="Demo2" class="w3-hide w3-container">
+          </div>
+          <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i>HTML</button>
+          <div id="Demo3" class="w3-hide w3-container">
+          </div>
+          <button onclick="myFunction('Demo4')" class="w3-button w3-block w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i>CSS</button>
+          <div id="Demo4" class="w3-hide w3-container">
+          </div>
+          <button onclick="myFunction('Demo5')" class="w3-button w3-block w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i>JAVASCRIPT</button>
+          <div id="Demo5" class="w3-hide w3-container">
+          </div>
+          <button onclick="myFunction('Demo6')" class="w3-button w3-block w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i>JAVA</button>
+          <div id="Demo6" class="w3-hide w3-container">
+          </div>
+          <button onclick="myFunction('Demo7')" class="w3-button w3-block w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i>PYTHON</button>
+          <div id="Demo7" class="w3-hide w3-container">
+          </div>
+          <button onclick="myFunction('Demo8')" class="w3-button w3-block w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i>PHP</button>
+          <div id="Demo8" class="w3-hide w3-container">
+          </div>
+          <button onclick="myFunction('Demo9')" class="w3-button w3-block w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i>ALGO</button>
+          <div id="Demo9" class="w3-hide w3-container">
+          </div>
+          <button onclick="myFunction('Demo10')" class="w3-button w3-block w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i>ANGLAIS</button>
+          <div id="Demo10" class="w3-hide w3-container">
+          </div>
+          <button onclick="myFunction('Demo11')" class="w3-button w3-block w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i>AGILE</button>
+          <div id="Demo11" class="w3-hide w3-container">
+          </div>
+          <button onclick="myFunction('Demo12')" class="w3-button w3-block w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i>POO</button>
+          <div id="Demo12" class="w3-hide w3-container">
+          </div>
+          <button onclick="myFunction('Demo12')" class="w3-button w3-block w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i>GIT</button>
+          <div id="Demo12" class="w3-hide w3-container">
+          </div>
+          <button onclick="myFunction('Demo13')" class="w3-button w3-block w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i>FRAMEWORKS</button>
+          <div id="Demo13" class="w3-hide w3-container">
+          </div>
+          <button onclick="myFunction('Demo14')" class="w3-button w3-block w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i>BDD/SQL/NoSQL</button>
+          <div id="Demo14" class="w3-hide w3-container">
+          </div>
+
+        </div>      
+      </div>
+      <br>
+    </div> -->
+    
+    <!-- file d'actualité -->
+    <div class="w3-col.m7">
+      
+      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+        <span class="w3-right w3-opacity">1 min</span>
+        <h4>PHP</br></br><p>tp minichat</p></h4><br>
+        <hr class="w3-clear">
+        
+        <p>bonjour,
+
+            le message que j'ai reçu au moment de l'envoi du formulaire.merci de votre aide.
+            
+            Internal Server Error
+            The server encountered an internal error or misconfiguration and was unable to complete your request.
+            
+            Please contact the server administrator at wampserver@wampserver.invalid to inform them of the time this error occurred, and the actions you performed just before this error.
+            
+            More information about this error may be available in the server error log.</p>
+        <button type="button" class="w3-button w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Liker</button> 
+        <button type="button" class="w3-button w3-margin-bottom"><i class="fa fa-comment"></i>  Commenter</button> 
+      </div>
+    
+            </div>
+          
+      
+      <br>
+    </div>
+
+</div>
+<br>
+
+<!-- Footer -->
+    <footer id="footer" class="w3-container w3-padding-16">
+      <h5></h5>
+    </footer>
+    
+    <footer id="footer2" class="w3-container ">
+      <p>Powered by Coding Factory</p>
+    </footer>
+
+
+
+</body>
+</html>  
+
+
+
+<script>
+// Accordion
+function myFunction(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-theme-d1";
+  } else { 
+    x.className = x.className.replace("w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-theme-d1", "");
+  }
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
