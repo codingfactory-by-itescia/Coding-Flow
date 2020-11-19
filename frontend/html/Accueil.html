@@ -23,7 +23,7 @@
 <nav id="navbar" class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="Accueil.html">Coverflow</a>
+        <a class="navbar-brand" href="app.html">Coverflow</a>
       </div>
       <div id="search" class="form-group">
        <input type="text" name="search" placeholder="Rechercher.." onclick="javascript:alert('Fonctionnalité en cours de construction..')">
@@ -31,10 +31,12 @@
       <ul class="nav navbar-nav">
         <li><a href="Accueil.html">Accueil</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="creation.html"><span class="glyphicon glyphicon-user"></span> S'enregistrer </a></li>
-        <li><a id="connecter" onclick="document.getElementById('id01').style.display='block'"><span class="glyphicon glyphicon-log-in w3"></span> Se connecter</a></li>
-      </ul>
+      <div id="social">
+        <ul class="nav navbar-nav navbar-right" >
+          <li><a href="creation.html"><span class="glyphicon glyphicon-user"></span> S'enregistrer </a></li>
+          <li><a id="connecter" onclick="document.getElementById('id01').style.display='block'"><span class="glyphicon glyphicon-log-in w3"></span> Se connecter</a></li>
+        </ul>
+      </div>
 
       <!--afficher la fenetre de connexion en pop'up-->
       <div id="id01" class="w3-modal">
@@ -44,7 +46,7 @@
               <h1 id="boutonconnect">Connexion</h1>
               <textarea class="w3-input w3-border w3-margin-bottom" type="email" placeholder="Entrez votre email.." id="loginEmail" required></textarea>
               <input class="w3-input w3-border" type="password" placeholder="Entrez votre mot de passe.." id="loginPwd" required></input>
-              <button class="w3-button w3-light-green w3-section w3-padding" type="button" id="login" disable >Se connecter</button>
+              <button class="w3-button w3-light-green w3-section w3-padding" type="submit" id="login" disable >Se connecter</button>
               <input class="w3-check w3-margin-top" type="checkbox"> Se souvenir de moi
             </div>
           </form>

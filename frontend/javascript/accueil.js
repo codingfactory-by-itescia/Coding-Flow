@@ -13,22 +13,6 @@ function getUserId(yourUrl) {
     return JSON.parse(Httpreq.responseText);
 }
 
-function getId(yourUrl){
-  var client = new XMLHttpRequest();
-  client.open("GET", yourUrl, true);
-  client.send();
-
-  client.onreadystatechange = function() {
-  if(this.readyState == this.HEADERS_RECEIVED) {
-    var userId = client.getResponseHeader("userId");
-    console.log(userId);
-    return userId;
-  }
-}
-
-}
-
-
 
 // Fonction Ajax pour post un objet
 function Post(yourUrl, postArticle) {
@@ -45,7 +29,7 @@ function form(){
     let desc = document.getElementById("desc").value;
     // let userId = getUserId("http://localhost:3000/api/header");
     // console.log(userId)
-    let userId = "admin"
+    let userId = localStorage.getItem('userName')
     let tabArticle = {"title": title, "tags": tags, "description": desc, "userId": userId}
     const obj = JSON.stringify(tabArticle);
     Post("http://127.0.0.1:3000/api/articles", obj)
@@ -54,27 +38,34 @@ function form(){
   // On récupère les données de localHost
 let btnSend = document.getElementById("send");
 btnSend.addEventListener("click",form)
-
-
+let button = document.getElementsByName("clickme") 
+    count = 0;
+    button.onclick = function() {
+        count += 1;
+        button.innerHTML = count + " " + "Likes";
+        };
 
 function boxArticles(){
     let articles = Get("http://127.0.0.1:3000/api/articles");
     let container = document.getElementById('fileactu')
     let i;
     for(i= (articles.length) -1 ; i>=0 ; i--){
-        container.innerHTML+='<div class="w3-container w3-card w3-white w3-round w3-margin"><br><h4>'+articles[i].tags+'</h4><br><p>'+articles[i].title+'</p><hr class="w3-clear"><p>'+articles[i].description+'</p><button name="clickme" type="button" class="w3-button w3-margin-bottom"><i class="fa fa-thumbs-up"></i><img class="coeur" src="../image/coeur.png" alt="coeur" height="20em" width="20em"> Liker </button><button type="button" class="w3-button w3-margin-bottom"><i class="fa fa-comment"></i>Commenter</button> </div>';
+        container.innerHTML+='<div class="w3-container w3-card w3-white w3-round w3-margin"><br><h4>'+articles[i].tags+'</h4><br><p>'+articles[i].title+'</p><hr class="w3-clear"><p>'+articles[i].description+'</p><button name="clickme" type="button" class="w3-button w3-margin-bottom"><i class="fa fa-thumbs-up"></i><img class="coeur" src="../image/coeur.png" alt="coeur" height="20em" width="20em"> Liker </button><button type="button" class="w3-button w3-margin-bottom"><i class="fa fa-comment"></i>Commenter</button>Posté par: '+articles[i].userId+' </div>';
   }
-    let button = document.getElementsByName("clickme")
+
+  if(localStorage.getItem('userId') != null){
+    let displayDisconnect = document.getElementById('deconnecter')
+    let changeConnect = document.getElementById('social')
+    // console.log(localStorage.getItem('userName')); 'Bonjour'+localStorage.getItem('userName') 
+    changeConnect.innerHTML = '<ul class="nav navbar-nav navbar-right"><li><a>Bonjour '+ localStorage.getItem('userName') + '</a></li><li><a id="deconnecter" onclick="deleteLS()"><span class="glyphicon glyphicon-log-in w3"></span> Se déconnecter</a></li>'
     
+  }
+    
+}
 
-count = 0;
-
-
-button.onclick = function() {
-  count += 1;
-  button.innerHTML = count + " " + "Likes";
-};
-
+function deleteLS(){
+    localStorage.clear()
+    document.location.reload()
 }
 
 //Valider formulaire vide ou non => Déblocage boutton

@@ -12,6 +12,6 @@ router.get('/', articleCtrl.getAllArticles);
 
 router.put('/:id', verify, articleCtrl.modifyArticle)
 
-router.delete('/:id', verify, articleCtrl.deleteArticle)
+router.delete('/:id', articleCtrl.deleteArticle)
 
 module.exports = router;

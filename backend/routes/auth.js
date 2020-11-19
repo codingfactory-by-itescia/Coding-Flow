@@ -54,13 +54,20 @@ router.post('/login', async (req, res) =>{
     if (!validPass) return res.status(400).send('Email or Password is incorrect')
 
     //Create and assign TOken
-    const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET)
+    const token = jwt.sign({userId: user._id}, process.env.TOKEN_SECRET, { expiresIn: '24h'})
     //Rajoute le token au header pour pouvoir le récupérer par la suite
     res.header('auth-token', token);
     res.header('userId', user.userId);
     res.send("Logged in")
 
 });
+
+
+router.get('/:email', (req,res) => {
+    User.findOne({ email:req.body.email })
+    .then(user => res.status(200).json(user))
+    .catch(error => res.status(404).json({error}))
+})
 
 
 

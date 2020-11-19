@@ -26,8 +26,8 @@ function form(){
   let password = document.getElementById("password").value;
   let tabUser = {"username": username, "email": email, "password": password}
   const obj = JSON.stringify(tabUser);
-  console.log(obj);
   Post("http://127.0.0.1:3000/api/users/register", obj)
+  document.location.replace('../html/Accueil.html')
 }
 
 

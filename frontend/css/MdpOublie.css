@@ -1,3 +1,7 @@
+html,body{
+    font-family: PT Sans;
+    background-color: white;
+}
 #navbar{
     border-radius: 0%;
     background-color: black;
@@ -44,29 +48,11 @@ input[type=text]:focus {
     bottom: 0%;
     width: 100%;
 }
-
-#formulaire{
-    margin-top: 15%;
-    border: 3px #D31919 solid;
-    width: 30%;
-    margin-left: 35%;
-    text-align: center;
-    font-family: sans-serif;
-    border-radius: 5px;
-    outline: none;
-    margin-top: 50px;
-    position: relative;
-    overflow: hidden;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: all 0.3s;
-  }
   
   .btn:hover{
     background-color: #815fc0;
   
   }
-  
   .btn::before{
     content: '';
     position: absolute;
@@ -78,30 +64,18 @@ input[type=text]:focus {
     z-index: -1;
     transition: all 0.3s;
   }
-  
-  * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 100;
-  }
-  
-  header{
-      text-align: center;
-      font-size: 400%;
-      text-decoration: underline;
-      background-color: black;
-      font-family: PT Sans;
-      color: floralwhite;
-      
-  }
+  main{
+    width: 40%;
+    height : 70%;
+    border: 1px solid white;
+    padding: 20px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: sans-serif;
 
-  img{
-      width: 80px;
-     margin-right: 2em;
-  }
-
-  a{
-      position: relative;
-      left: -30%;
-  }
+}
 

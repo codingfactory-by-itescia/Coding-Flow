@@ -8,7 +8,7 @@ const dotenv = require("dotenv").config();
 const authRoute = require('./routes/auth');
 const articleRoute = require('./routes/posts');
 const headerRoute = require('./routes/header');
-
+const userRoute = require('./routes/user')
 
 mongoose.connect('mongodb+srv://Yanis:CU6U1mV3wpnGoGaP@cluster0.kjjtc.mongodb.net/<coverflow>?retryWrites=true&w=majority',
   { useNewUrlParser: true,
@@ -29,5 +29,6 @@ app.use(bodyParser.json());
 app.use('/api/users', authRoute);
 app.use('/api/articles', articleRoute);
 app.use('/api/header', headerRoute);
+app.use('/api', userRoute)
 
 module.exports = app;

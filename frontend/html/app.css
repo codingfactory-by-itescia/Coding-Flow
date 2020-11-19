@@ -1,0 +1,21 @@
+body{
+    background-color: #FDFEFE;
+}
+
+.app{
+    height: 6em;
+    width: 7em;
+}
+
+/* .support {
+    position: relative;
+    left: 65em;
+    top: -64em;
+    font-size: 7em;
+} */
+
+.box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
