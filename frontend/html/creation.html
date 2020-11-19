@@ -37,12 +37,12 @@
             <h1 id="boutonconnect">Connexion</h1>
             <textarea class="w3-input w3-border w3-margin-bottom" type="email" placeholder="Entrez votre email.." id="loginEmail" required></textarea>
             <input class="w3-input w3-border" type="password" placeholder="Entrez votre mot de passe.." id="loginPwd" required></input>
-            <button class="w3-button w3-light-green w3-section w3-padding" type="submit" id="login" disable >Se connecter</button>
+            <button class="w3-button w3-light-green w3-section w3-padding" type="button" id="login" disable >Se connecter</button>
             <input class="w3-check w3-margin-top" type="checkbox"> Se souvenir de moi
           </div>
         </form>
         <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-          <button onclick="document.getElementById('id01').style.display='none'" type="submit" class="w3-button w3-red">Fermer</button>
+          <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-red">Fermer</button>
           <span class="w3-right w3-padding w3-hide-small"><a href="../html/MdpOublie.html">Mot de passe oublié ?</a></span>
         </div>    
       </div>
@@ -59,31 +59,31 @@
 
 <br>
 
-        
+        <main>
+          <!--en-tête-->
+          <img src="../image/logopage2.png">
 
-
-        <div class="user">
-          <header class="user__header">
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
-              <h1 class="user__title">A lightweight and simple sign-up form</h1>
-          </header>
-          
-          <form class="form">
-              <div class="form__group">
-                  <input type="text" placeholder="Username" class="form__input" />
-              </div>
-              
-              <div class="form__group">
-                  <input type="email" placeholder="Email" class="form__input" />
-              </div>
-              
-              <div class="form__group">
-                  <input type="password" placeholder="Password" class="form__input" />
-              </div>
-              
-              <button class="btn" type="button">Register</button>
+          <div id="text">
+                <h1> Bienvenue sur Coverflow </h1></br>
+          </div>
+      
+          <div id="text2">
+              <p> Des questions techniques ? </p></br>
+              <p>TROUVEZ TOUTES LES RÉPONSES ICI !</p>
+          </div>
+        </br>
+          <form name="Form">
+            <div id="zoneText">
+              <input type="text" id="username" name="identifiant" placeholder="Identifiant (6 caractères minimum)" required ><br>
+              <input type="email" id="emailUser" name="email" placeholder="Email" required><br>
+              <input type="password" id="password" name="password" placeholder="Mot de passe (8 caractères minimum)" required><br>
+              <!-- <input type="password" id="" name="password" placeholder="Confirmation mot de passe" required><br> -->
+            </div>
           </form>
-      </div>
+      
+          <br>        
+          <button class="btn" type="button" id="send" disabled >Inscription</button>
+        </main>
 
  <!-- Footer -->
  <div id="foot">
