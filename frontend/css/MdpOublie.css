@@ -103,6 +103,7 @@ button {
   }
 
   a{
-      text-align: left;
+      position: relative;
+      left: -30%;
   }
 
