@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
-<title>CoverFlow</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
-<link rel='stylesheet' href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="../css/Accueil.css">
+<head>
+  <title>CoverFlow</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+  <link rel='stylesheet' href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/Accueil.css">
+</head>  
 
 
 <body class="w3-theme-l5">
 
 <!--en-tête-->
 <div class=backphoto alt=banniere></div>
+<!--<h2>Pour les développeurs de demain..</h2> -->
 
 
 <!-- Navbar -->
@@ -25,7 +26,7 @@
         <a class="navbar-brand" href="Accueil.html">Coverflow</a>
       </div>
       <div id="search" class="form-group">
-       <input type="text" name="search" placeholder="Search.." enter="getValue();">
+       <input type="text" name="search" placeholder="Search.." onclick="javascript:alert('Fonctionnalité en cours de construction..')">
       </div>
       <ul class="nav navbar-nav">
         <li><a href="Accueil.html">Accueil</a></li>
@@ -38,12 +39,12 @@
       <!--afficher la fenetre de connexion en pop'up-->
       <div id="id01" class="w3-modal">
         <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-          <form class="w3-container" action="/action_page.php">
+          <form class="w3-container" name="loginForm">
             <div class="w3-section">
               <h1 id="boutonconnect">Connexion</h1>
-              <input id="pseudo" class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required >
-              <input id="motDePasse" class="w3-input w3-border" type="text" placeholder="Enter Password" name="psw" required>
-              <button class="w3-button w3-light-green w3-section w3-padding" type="submit">Login</button>
+              <textarea class="w3-input w3-border w3-margin-bottom" type="email" placeholder="Enter email" id="loginEmail" required></textarea>
+              <input class="w3-input w3-border" type="password" placeholder="Enter Password" id="loginPwd" required></input>
+              <button class="w3-button w3-light-green w3-section w3-padding" type="button" id="login" disable >Login</button>
               <input class="w3-check w3-margin-top" type="checkbox"> Remember me
             </div>
           </form>
@@ -77,14 +78,16 @@
       <!-- Accordion -->
        <div class="w3-card w3-left-align">
          <div class="w3-white">
-           <a onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-block w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i>Post +</a>
+           <a onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-block w3-left-align" ><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i>Post +</a>
             <div id="id02" class="w3-modal">
                <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-                  <form class="w3-container" action="/action_page.php">
+                  <form class="w3-container" action="" name="Form">
                    <div class="w3-section">
                      <label><b>Post ton probleme !</b></label>
-                     <textarea class="w3-input w3-border w3-margin-bottom" type="" placeholder="Tape ton post"required></textarea>
-                     <button onclick="sendPost" class="w3-button  w3-light-green w3-section w3-padding" type="submit">Post</button>
+                     <textarea class="w3-input w3-border w3-margin-bottom" id="title" type="text" placeholder="Titre de ton post"required></textarea>
+                     <textarea class="w3-input w3-border w3-margin-bottom" id="tags" type="text" placeholder="Tags"required></textarea>
+                     <textarea class="w3-input w3-border w3-margin-bottom" id="desc" type="text" placeholder="Tape ton post"required></textarea>
+                     <button class="w3-button  w3-light-green w3-section w3-padding" type="button" id="send" disabled >Post</button>
                    </div>
                   </form>
                  <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
@@ -156,7 +159,7 @@
           Sauf que moi j'aimerai preload une image dans page1.html pour qu'elle soit prête lorsque j'arrive sur page2.html (à laquelle j'accède avec un lien <"a">). Est-ce possible ?
           
           Merci de votre aide</p>
-        <button type="button" class="w3-button w3-margin-bottom"><i class="fa fa-thumbs-up"></i><img class="coeur" src="../image/coeur.png" alt="coeur" height="20em" width="20em"> Liker</button> 
+        <button id="click" type="button" class="w3-button w3-margin-bottom"><i class="fa fa-thumbs-up"></i><img class="coeur" src="../image/coeur.png" alt="coeur" height="20em" width="20em"> 0 Like </button> 
         <button type="button" class="w3-button w3-margin-bottom"><i class="fa fa-comment"></i>  Commenter</button> 
       </div> 
     </div>
@@ -213,6 +216,10 @@
 </body>
 </html>  
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="../javascript/accueil.js"></script>
+<script src="../javascript/login.js"></script>
 
 
 <script>

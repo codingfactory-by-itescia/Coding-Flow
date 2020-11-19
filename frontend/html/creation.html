@@ -1,37 +1,54 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel='stylesheet' href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="../css/creation.css">
+<head>
+  <title>Coverflow Inscription</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel='stylesheet' href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/creation.css">
+</head>  
 
 <body class="w3-theme-l5">
 
 <!-- Navbar -->
 <nav id="navbar" class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="Accueil.html">Coverflow</a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li><a href="Accueil.html">Accueil</a></li>
-      </ul>
-      <div id="search" class="form-group">
-        <input type="search" class="form-control" placeholder="Rechercher..">
-      </div>
-      <button id="button" type="submit" class="btn btn-default">OK</button>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> S'enregistrer</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Se connecter</a></li>
-      </ul>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="Accueil.html">Coverflow</a>
     </div>
-  </nav>
+    <div id="search" class="form-group">
+     <input type="text" name="search" placeholder="Search.." enter="getValue();">
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="Accueil.html">Accueil</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="creation.html"><span class="glyphicon glyphicon-user"></span> S'enregistrer </a></li>
+      <li><a id="connecter" onclick="document.getElementById('id01').style.display='block'" > <span class="glyphicon glyphicon-log-in"></span> Se connecter</a></li>
+    </ul>
 
+    <!--afficher la fenetre de connexion en pop'up-->
+    <div id="id01" class="w3-modal">
+      <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+        <form class="w3-container" action="">
+          <div class="w3-section">
+            <h1 id="boutonconnect">Connexion</h1>
+            <input id="pseudo" class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required >
+            <input id="motDePasse" class="w3-input w3-border" type="text" placeholder="Enter Password" name="psw" required>
+            <button class="w3-button w3-light-green w3-section w3-padding" type="submit">Login</button>
+            <input class="w3-check w3-margin-top" type="checkbox"> Remember me
+          </div>
+        </form>
+        <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+          <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+          <span class="w3-right w3-padding w3-hide-small"><a href="../html/MdpOublie.html">Forgot password ?</a></span>
+        </div>    
+      </div>
+    </div>
+    <!--Fin du pop'up-->
+  </nav>
 <!-- Navbar sur petit ecrans -->
 <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
   <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
@@ -54,16 +71,17 @@
         <p> Des questions techniques ? </p></br>
         <p>TROUVEZ TOUTES LES RÉPONSES ICI !</p>
     </div>
- 
-    <div id="zoneText">
-       <input required type="text" id="identifiant" name="identifiant" placeholder="Identifiant" required><br>
-       <input type="email" id="email" name="email" placeholder="email" required><br>
-       <input type="password" id="password" name="password" placeholder="Mot de passe" required><br>
-       <input type="password" id="confirmPass" name="password" placeholder="Confirmation mot de passe" required><br>
-    </div>
+    <form name="Form">
+      <div id="zoneText">
+        <input type="text" id="username" name="identifiant" placeholder="Identifiant (6 caractères minimum)" required ><br>
+        <input type="email" id="emailUser" name="email" placeholder="Email" required><br>
+        <input type="password" id="password" name="password" placeholder="Mot de passe (8 caractères minimum)" required><br>
+        <!-- <input type="password" id="" name="password" placeholder="Confirmation mot de passe" required><br> -->
+      </div>
+    </form>
  
     <br>        
-    <button class="btn" type="button" id="inscriptionBouton">Inscription</button>
+    <button class="btn" type="button" id="send" disabled >Inscription</button>
  
 
  <!-- Footer -->
@@ -76,7 +94,9 @@
       <p>Powered by Coding Factory</p>
     </footer>
 </div>
-<script src=""></script>
 
 </body>
 </html>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="../javascript/register.js"></script>

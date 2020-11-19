@@ -6,7 +6,8 @@ const dotenv = require("dotenv").config();
 
 //Import Routes
 const authRoute = require('./routes/auth');
-const articleRoute = require('./routes/posts')
+const articleRoute = require('./routes/posts');
+const headerRoute = require('./routes/header');
 
 
 mongoose.connect('mongodb+srv://Yanis:CU6U1mV3wpnGoGaP@cluster0.kjjtc.mongodb.net/<coverflow>?retryWrites=true&w=majority',
@@ -26,6 +27,7 @@ app.use((req, res, next) => {
 //Route middleware
 app.use(bodyParser.json());
 app.use('/api/users', authRoute);
-app.use('/api/articles', articleRoute)
+app.use('/api/articles', articleRoute);
+app.use('/api/header', headerRoute);
 
 module.exports = app;
