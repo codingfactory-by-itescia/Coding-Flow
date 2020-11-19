@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="twitch" content="width=device-width, initial-scale=1.0">
+  <title>Coverflow - Inscription</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/inscription.css">
+</head>
+<body>
+    <main>
+      <header>
+      </header>
+        <form name="Form">
+          <h1> Créer un post </h1>
+          <div>
+            <label for="title"> Titre: (30 caractères maximum) </label>
+            <input required type="text" id="title" name="tagsField" required>
+          </div>
+  
+          <div>
+            <label for="tags"> Tags : </label>
+            <input type="text" id="tags" name="tagsField" required>
+          </div>
+  
+          <div>
+            <label for="desc"> Description : </label>
+            <input type="text" id="desc" name="descField" style="height: 20em;width: 25em;" required>
+          </div>
+  
+          <button class="" type="button" id="send" disabled>Send</button>
+        </form>
+    </main>
+      <script src="../javascript/createArticle.js"></script>
+  </body>
+  </html>
