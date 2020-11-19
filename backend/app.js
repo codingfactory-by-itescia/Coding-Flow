@@ -10,7 +10,7 @@ const articleRoute = require('./routes/posts');
 const headerRoute = require('./routes/header');
 
 
-mongoose.connect('mongodb+srv://Yanis:CU6U1mV3wpnGoGaP@cluster0.kjjtc.mongodb.net/<coverflow>?retryWrites=true&w=majority',
+mongoose.connect("mongodb+srv://Rob:robinl953.@cluster0.jpfvt.mongodb.net/<dbname>?retryWrites=true&w=majority",
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))

@@ -23,11 +23,3 @@ function loginForm(){
     console.log(obj);
     Post("http://127.0.0.1:3000/api/users/login", obj)
   }
-
-  function Post(yourUrl, userObj) {
-    var xhr = new XMLHttpRequest(); 
-    xhr.open("POST", yourUrl, true);
-    xhr.setRequestHeader("Content-Type", "application/json")
-    xhr.setRequestHeader("Accept", "application/json")
-    xhr.send(userObj);
-  }

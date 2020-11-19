@@ -1,34 +1,78 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/mdpOublie.css">
-    <title>Mot de passe oublié</title>
-</head>
-<body>
-    <main>
-        <header>
-            <a href="Accueil.html">Accueil</a>
-            <!--<img src="../logo.Coverflow.png" alt="Logo Coverflow">-->
-            Coverflow
-        </header>
-        <form>
-            <h1>Nouveau mot de passe</h1>
-            <div>
-                
-                <input type="email" id="email" placeholder="Email" required>
+<html>
+  <head>
+   <title>CoverFlow</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+   <link rel='stylesheet' href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="../css/MdpOublie.css">
+  </head>  
+
+
+ <body class="w3-theme-l5">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-inverse">
+       <div class="container-fluid">
+       <div class="navbar-header">
+          <a class="navbar-brand" href="Accueil.html">Coverflow</a>
+      </div>
+      <div id="search" class="form-group">
+       <input type="text" name="search" placeholder="Rechercher.." onclick="javascript:alert('Fonctionnalité en cours de construction..')">
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="Accueil.html">Accueil</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="creation.html"><span class="glyphicon glyphicon-user"></span> S'enregistrer </a></li>
+        <li><a id="connecter" onclick="document.getElementById('id01').style.display='block'"><span class="glyphicon glyphicon-log-in w3"></span> Se connecter</a></li>
+      </ul>
+
+      <!--afficher la fenetre de connexion en pop'up-->
+      <div id="id01" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+          <form class="w3-container" name="loginForm">
+            <div class="w3-section">
+              <h1 id="boutonconnect">Connexion</h1>
+              <textarea class="w3-input w3-border w3-margin-bottom" type="email" placeholder="Entrez votre email.." id="loginEmail" required></textarea>
+              <input class="w3-input w3-border" type="password" placeholder="Entrez votre mot de passe.." id="loginPwd" required></input>
+              <button class="w3-button w3-light-green w3-section w3-padding" type="button" id="login" disable >Se connecter</button>
+              <input class="w3-check w3-margin-top" type="checkbox"> Se souvenir de moi
             </div>
-            <div>
-                
-                <input type="password" id="newPassword" placeholder="Nouveau mot de passe" required>
-            </div>
-            <div>
-                
-                <input type="password" id="confirmNewPassword" placeholder="Confirmation du mot de passe" required>
-            </div>
+          </form>
+          <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+            <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-red">Fermer</button>
+            <span class="w3-right w3-padding w3-hide-small"><a href="../html/MdpOublie.html">Mot de passe oublié ?</a></span>
+          </div>    
+        </div>
+      </div>
+      <!--Fin du pop'up--> 
+    </nav>
+    
+    <!-- Mot de passe oublié -->
+        <form id="formulaire">
+            <h1>Nouveau mot de passe</h1><br>
+              <div id="barres">
+                <input type="email" id="email" placeholder="Email" required><br><br>
+                <input type="password" id="newPassword" placeholder="Nouveau mot de passe" required><br><br>
+                <input type="password" id="confirmNewPassword" placeholder="Confirmation du mot de passe" required><br><br>
+              </div>
             <button type="btn" class="bouton" id="NouveauMotDePasse">Changer mon mot de passe</button>
         </form>
-    </main>
-</body>
-</html>
+    <!-- Mot de passe oublié --> 
+
+   <br>
+
+   <!-- Footer -->
+    <footer id="footer" class="w3-container w3-padding-16">
+      <h5></h5>
+    </footer>
+    
+    <footer id="footer2" class="w3-container ">
+      <p>Powered by Coding Factory</p>
+    </footer>
+  </body>
+</html>  
