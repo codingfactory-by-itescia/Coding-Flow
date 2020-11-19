@@ -142,20 +142,18 @@
       
       <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
         <span class="w3-right w3-opacity">1 min</span>
-        <h4>HTML</br></br><p>Barre Forms-Controls</p></h4><br>
+        <h4>GIT</br></br><p>De l'utilistation de git-flow dans la vraie vie</p></h4><br>
         <hr class="w3-clear">
         
-        <p>Salut, je cherche à faire ceci :
+        <p>Bonjour,
 
-          ht tps:/nsa40.casimages.com/img/2020/11/11/201111060559410868.png
+          Je viens récemment de découvrir git-flow, un utilitaire pour facilement utiliser git. J’aurai aimé savoir si certains l’ont utilisé dans la vraie vie et ce que vous en pensez de manière générale : facilité d’utilisation, prise en main, avis par rapport à d’autres outils.
           
-          (je sais pas si les liens sont autorisés)
+          Actuellement je travaille avec "fork + PR/MR" et "push to master yolo" selon les différents projets auxquels je participe. Le contexte de l’utilisation de gitflow serait pour un petit projet faisant intervenir un petit nombre de personnes (moins de 10) connaissant git mais n’ayant pas nécessairement des connaissances super avancées sur le sujet.
           
-          J'aimerais que chaque proposition fonctionne comme un bouton : quand on clique sur le épisode 2 (par exemple), cela nous amène vers un lien spécifique.
-          
-          Je sais pas si vous avez compris mais n'hésitez pas à poser des questions si vous n'avez pas compris. Je pense que c'est réalisable uniquement en HTML. 
-          
-          Merci</p>
+          Site officiel
+          Cheat-sheet pour tout comprendre sur le fonctionnement de git-flow
+          Dépôt git</p>
         <button type="button" class="w3-button w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Liker</button> 
         <button type="button" class="w3-button w3-margin-bottom"><i class="fa fa-comment"></i>  Commenter</button> 
       </div>
@@ -167,7 +165,25 @@
     </div>
 
 </div>
-<br>
+
+<div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:900px">
+  <form class="w3-container" action="" name="Form">
+   <div class="w3-section">
+     <label><b> Quel est ton problème ? </b></label>
+     <textarea class="w3-input w3-border w3-margin-bottom" id="title" type="text" placeholder="Donnes un titre à ton poste"required></textarea>
+     <textarea class="w3-input w3-border w3-margin-bottom" id="tags" type="text" placeholder="Quel #Tag ? "required></textarea>
+     <textarea class="w3-input w3-border w3-margin-bottom" id="desc" type="text" placeholder="Exposes ta problématique"required></textarea>
+     <button class="w3-button  w3-light-green w3-section w3-padding" type="button" id="send" disabled >Poster</button>
+   </div>
+  </form>
+ <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+  <button onclick="document.getElementById('id02').style.display='none'" type="button" class="w3-button w3-red">Fermer</button>
+ </div>
+</br>
+</br>
+</div>
+
+
 
 <!-- Footer -->
     <footer id="footer" class="w3-container w3-padding-16">

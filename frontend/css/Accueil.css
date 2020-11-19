@@ -11,6 +11,10 @@ html{
     top: 0%;
     width: 100%;
 }
+
+#connecter {
+    cursor: pointer;
+}
 /* 
 h2{
     color: white;
@@ -20,20 +24,17 @@ h2{
 } */
 
 #search{
-    position: fixed;
-    width: 20%;
+    position: relative;
+    width: 30%;
     margin-bottom: -10%;
     padding-top: 0.5%;
-    margin-left: 10%;
+    margin-left: 35%;
 }
 
-#search {
-    position: relative;
-    left: 30em;
-}
+
 
 input[type=text] {
-    width: 130px;
+    width: 160px;
     height: 9px;
     box-sizing: border-box;
     border-radius: 4px;
@@ -72,7 +73,7 @@ input[type=text]:focus {
     padding: 0;
     margin: 0;
     color: white;
-    background-image: url("../image/anim.mp4");
+    background-image: url("../image/coverflow.mp4.mp4");
     background-attachment: fixed;
     background-size: cover;
     background-position: center center;
