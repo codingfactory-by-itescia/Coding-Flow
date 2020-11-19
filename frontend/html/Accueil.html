@@ -12,7 +12,7 @@
 </head>  
 
 
-<body class="w3-theme-l5">
+<body class="w3-theme-l5" onload="boxArticles()">
 
 <!--en-tête-->
 <div class=backphoto alt=banniere></div>
@@ -80,7 +80,7 @@
                      <textarea class="w3-input w3-border w3-margin-bottom" id="title" type="text" placeholder="Donnes un titre à ton poste"required></textarea>
                      <textarea class="w3-input w3-border w3-margin-bottom" id="tags" type="text" placeholder="Quel #Tag ? "required></textarea>
                      <textarea class="w3-input w3-border w3-margin-bottom" id="desc" type="text" placeholder="Exposes ta problématique"required></textarea>
-                     <button class="w3-button  w3-light-green w3-section w3-padding" type="button" id="send" disabled >Poster</button>
+                     <button class="w3-button  w3-light-green w3-section w3-padding" type="submit" id="send" disabled >Poster</button>
                    </div>
                   </form>
                  <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
@@ -118,46 +118,8 @@
     <!-- file d'actualité -->
     <div id="fileactu" class="w3-col w3-row m7">
       
-      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-        <span class="w3-right w3-opacity">1 min</span>
-        <h4>JAVASCRIPT</h4><br>
-        <p>Lien avec transition ou animation au clic</p>
-        <hr class="w3-clear">
-        <p>Bonjour,
-
-          Je souhaite cliquer sur un lien sous forme de bouton, que cela lance l'animation ou la transition de ce bouton, puis quand l'animation est terminée, le lien est activé ce qui envoi vers une autre page.
-          
-          J'ai essayé en CSS avec a:active mais le problème est qu'en CSS il faut laisser le clic activé tout le temps de l'animation hors je veux juste pouvoir faire un simple clic.
-          
-          Je pense qu'il faut impérativement du JavaScript mais je n'ai pas encore idée de comment.
-          
-          Si quelqu'un a une idée de comment faire ça, ce serait cool.
-          
-          Merci.</p>
-        
-        <button id="clickme" type="button" class="w3-button w3-margin-bottom"><i class="fa fa-thumbs-up"></i><img class="coeur" src="../image/coeur.png" alt="coeur" height="20em" width="20em"> Liker </button>
-        <button type="button" class="w3-button w3-margin-bottom"><i class="fa fa-comment"></i>Commenter</button> 
-      </div>
-      
-      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-        <span class="w3-right w3-opacity">16 min</span>
-        <h4>CSS</h4><br>
-        <p>Pré-charger une image</p>
-        <hr class="w3-clear">
-        
-        <p>Bonjour,
-
-          Existe-t-il un moyen de précharger une image en amont pour qu'elle se charge plus vite sur une page différente ?
-          
-          A chaque fois que je recherche avec les mots clés "preload html image",j'ai l'impression que ça preload l'image uniquement pour prévoir un affichage plus bas sur la page HTML.
-          
-          Sauf que moi j'aimerai preload une image dans page1.html pour qu'elle soit prête lorsque j'arrive sur page2.html (à laquelle j'accède avec un lien a). Est-ce possible ?
-          
-          Merci de votre aide</p>
-        <button id="clickme2" type="button" class="w3-button w3-margin-bottom"><i class="fa fa-thumbs-up"></i><img class="coeur" src="../image/coeur.png" alt="coeur" height="20em" width="20em"> Liker </button> 
-        <button type="button" class="w3-button w3-margin-bottom"><i class="fa fa-comment"></i>  Commenter</button> 
-      </div> 
     </div>
+    
     <!--Fin file d'actualité--> 
 
     

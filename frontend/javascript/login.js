@@ -3,9 +3,9 @@ addEventListener("mousemove",validateLoginForm)
 addEventListener("keypress",validateLoginForm)
 
 function validateLoginForm() {
-  var usernameField = document.forms["loginForm"]["loginEmail"].value;
+  var emailField = document.forms["loginForm"]["loginEmail"].value;
   var pwdField = document.forms["loginForm"]["loginPwd"].value;
-  if (loginEmail == null || loginEmail == "" || pwdField == null || pwdField == ""|| pwdField.length <= 8) {
+  if (emailField == null || emailField == "" || pwdField == null || pwdField == ""|| pwdField.length <= 8) {
     document.getElementById("login").disabled = true;
     return false;
   }

@@ -51,7 +51,6 @@ input[type=text]:focus {
     width: 30%;
     margin-left: 35%;
     text-align: center;
-<<<<<<< HEAD
     font-family: sans-serif;
     border-radius: 5px;
     outline: none;
@@ -106,12 +105,3 @@ input[type=text]:focus {
       left: -30%;
   }
 
-=======
-    padding-top: 3%;
-    padding-bottom: 5%;
-    border-radius: 100px;
-}
-#barres{
-    width: 10%;
-}
->>>>>>> 647559662e6b818a1ecd08d5df08ed5731c506ac

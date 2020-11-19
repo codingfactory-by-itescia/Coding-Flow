@@ -43,25 +43,38 @@ function form(){
     let title = document.getElementById("title").value; 
     let tags = document.getElementById("tags").value;
     let desc = document.getElementById("desc").value;
-    let userId = getUserId("http://localhost:3000/api/header");
-    console.log(userId)
+    // let userId = getUserId("http://localhost:3000/api/header");
+    // console.log(userId)
+    let userId = "admin"
     let tabArticle = {"title": title, "tags": tags, "description": desc, "userId": userId}
     const obj = JSON.stringify(tabArticle);
     Post("http://127.0.0.1:3000/api/articles", obj)
   }
 
   // On récupère les données de localHost
-//let articles = Get("http://127.0.0.1:3000/api/articles");
 let btnSend = document.getElementById("send");
 btnSend.addEventListener("click",form)
 
 
 
-function testLog(){
-  let i;
-  for(i=0;i<articles.length;i++){
-    console.log(articles[i]);
+function boxArticles(){
+    let articles = Get("http://127.0.0.1:3000/api/articles");
+    let container = document.getElementById('fileactu')
+    let i;
+    for(i= (articles.length) -1 ; i>=0 ; i--){
+        container.innerHTML+='<div class="w3-container w3-card w3-white w3-round w3-margin"><br><h4>'+articles[i].tags+'</h4><br><p>'+articles[i].title+'</p><hr class="w3-clear"><p>'+articles[i].description+'</p><button name="clickme" type="button" class="w3-button w3-margin-bottom"><i class="fa fa-thumbs-up"></i><img class="coeur" src="../image/coeur.png" alt="coeur" height="20em" width="20em"> Liker </button><button type="button" class="w3-button w3-margin-bottom"><i class="fa fa-comment"></i>Commenter</button> </div>';
   }
+    let button = document.getElementsByName("clickme")
+    
+
+count = 0;
+
+
+button.onclick = function() {
+  count += 1;
+  button.innerHTML = count + " " + "Likes";
+};
+
 }
 
 //Valider formulaire vide ou non => Déblocage boutton
@@ -103,20 +116,6 @@ function validateForm() {
 // };
 
 
-let button = document.getElementById("clickme")
-let button2 = document.getElementById("clickme2")
 
-count = 0;
-count2 = 0;
-
-button.onclick = function() {
-  count += 1;
-  button.innerHTML = count + " " + "Likes";
-};
-
-button2.onclick = function() {
-  count2 += 1;
-  button2.innerHTML = count2 + " " + "Likes";
-};
 
 
