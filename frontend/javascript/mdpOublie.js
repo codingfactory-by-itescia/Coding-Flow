@@ -10,7 +10,7 @@ function passwordForm(){
 };
 
 
-  
+
 
 function modifyPassword(yourUrl, objPassword) {
     var xhr = new XMLHttpRequest(); 
