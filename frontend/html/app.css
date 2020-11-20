@@ -5,17 +5,17 @@ body{
 .app{
     height: 6em;
     width: 7em;
+    position: absolute;
 }
 
-/* .support {
-    position: relative;
-    left: 65em;
+#support {
+    margin-left: 65em;
     top: -64em;
-    font-size: 7em;
-} */
+}
 
 .box {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    
 }
